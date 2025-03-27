@@ -29,7 +29,6 @@ body {
   min-width: 320px; /* Supaya nggak terlalu kecil */
   padding: 30px;
   word-wrap: break-word;
-  
 }
 
 .profile-card::before {
@@ -43,7 +42,6 @@ body {
   background-color: #E36AA5;
   z-index: 0; /* Supaya tetap di belakang teks tapi nggak hilang */
 }
-
 
 .image {
   position: relative;
@@ -107,28 +105,29 @@ body {
   text-decoration: none;
 }
 
+/* Perbaikan tombol supaya dalam satu baris */
 .profile-card .buttons {
   display: flex;
-  align-items: center;
-  margin-top: 25px;
+  flex-wrap: nowrap; /* Pastikan tidak turun ke bawah */
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
 
 .buttons .button {
   color: #4A235A;
-  font-size: 14px;
+  font-size: 13px; /* Kecilkan sedikit agar cukup dalam satu baris */
   font-weight: 400;
   border: none;
   border-radius: 24px;
-  margin: 0 10px;
-  padding: 10px 30px;
+  margin: 0 5px;
+  padding: 8px 15px; /* Kurangi padding biar nggak kepanjangan */
   background-color: #EFAFD8;
   cursor: pointer;
   transition: all 0.3s ease;
-  flex: 1; /* Biar tombol mengikuti lebar yang ada */
-  min-width: 80px; /* Minimal ukuran tombol */
-  max-width: 120px; /* Biar tombol nggak terlalu lebar */
-  padding: 10px 15px; /* Kurangi padding biar lebih fleksibel */
-  white-space: nowrap; /* Biar teks di tombol nggak turun */
+  min-width: 80px;
+  max-width: 120px;
+  white-space: nowrap;
 }
 
 .buttons .button:hover {
@@ -141,23 +140,17 @@ body {
   margin-top: 25px;
 }
 
+/* Perbaikan teks agar cuma 2 baris */
 .analytics .data {
-  display: flex;
-  align-items: center;
-  color: #333;
-  padding: 10px 30px;
-  white-space: nowrap; /* Mencegah teks turun ke baris baru */
-  gap: 3px; /* Jarak antara ikon dan teks */
-  max-width: 100%; /* Biar nggak melebihi box */
-  white-space: normal; /* Supaya teks bisa turun ke bawah */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  max-width: 250px;
   text-align: center;
- 
+  line-height: 1.4;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .data i {
-  font-size: px;
+  font-size: 20px;
   margin-right: 6px;
 }
 
@@ -166,13 +159,14 @@ body {
 }
 
 .bx {
-  font-size: 25px; /* Atur ukuran ikon */
+  font-size: 25px;
 }
 
+/* Biar tombol tetap rapi */
 .buttons {
   display: flex;
-  flex-wrap: wrap; /* Biar tombol turun kalau nggak cukup */
+  flex-wrap: nowrap; /* Supaya tetap satu baris */
   justify-content: center;
-  gap: 10px; /* Jarak antar tombol */
+  gap: 10px;
   width: 100%;
 }
